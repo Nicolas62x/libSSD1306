@@ -39,7 +39,7 @@ main()
 {
     try
     {
-        SSD1306::OledI2C oled{"/dev/i2c-1", 0x3C};
+        SSD1306::OledI2C oled{"/dev/i2c-3", 0x3D};
         drawString8x16(SSD1306::OledPoint{32, 24},
                        "Oled I" "\xFD" "C",
                        SSD1306::PixelStyle::Set,
