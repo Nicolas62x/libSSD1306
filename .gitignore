@@ -26,11 +26,17 @@
 *.exe
 *.out
 *.app
+bin/
 
 # build
 
 build/
 
 # other directories
-
+CMakeFiles/
+Makefile
+CMakeCache.txt
+settings.json
+.vscode-ctags
+cmake_install.cmake
 *_/
