@@ -35,11 +35,17 @@
 //-------------------------------------------------------------------------
 
 int
-main()
+main(int argc, char** argv)
 {
+    if (argc != 2)
+    {
+        std::cout << "Please give i2c device !" << std::endl;
+        return -1;
+    }
+
     try
     {
-        SSD1306::OledI2C oled{"/dev/i2c-3", 0x3D};
+        SSD1306::OledI2C oled{argv[1], 0x3D};
         drawString8x16(SSD1306::OledPoint{32, 24},
                        "Oled I" "\xFD" "C",
                        SSD1306::PixelStyle::Set,

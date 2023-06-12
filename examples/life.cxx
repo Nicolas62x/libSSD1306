@@ -200,8 +200,14 @@ iterateLife(
 //-------------------------------------------------------------------------
 
 int
-main()
+main(int argc, char** argv)
 {
+    if (argc != 2)
+    {
+        std::cout << "Please give i2c device !" << std::endl;
+        return -1;
+    }
+
     try
     {
         constexpr std::array<int, 2> signals{SIGINT, SIGTERM};
@@ -220,7 +226,7 @@ main()
             }
         }
 
-       SSD1306::OledI2C oled{"/dev/i2c-3", 0x3D};
+       SSD1306::OledI2C oled{argv[1], 0x3D};
 
         Bitmap pixels;
 

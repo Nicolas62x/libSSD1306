@@ -37,8 +37,14 @@
 //-------------------------------------------------------------------------
 
 int
-main()
+main(int argc, char** argv)
 {
+    if (argc != 2)
+    {
+        std::cout << "Please give i2c device !" << std::endl;
+        return -1;
+    }
+
     try
     {
         SSD1306::OledBitmap<16, 16> bitmap
@@ -61,7 +67,7 @@ main()
              0b00000000, 0b00000000
         };
 
-        SSD1306::OledI2C oled{"/dev/i2c-3", 0x3D};
+        SSD1306::OledI2C oled{argv[1], 0x3D};
 
         for (auto y = -(bitmap.height() / 2) ;
              y < (oled.height() + (bitmap.height() / 2)) ;
