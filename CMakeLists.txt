@@ -47,3 +47,5 @@ target_link_libraries(testbitmap SSD1306)
 add_executable(testoled examples/testoled.cxx examples/LinuxKeys.cxx)
 target_link_libraries(testoled SSD1306)
 
+add_executable(hts221 examples/hts221.cxx)
+target_link_libraries(hts221 HTS221)
