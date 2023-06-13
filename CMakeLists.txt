@@ -10,14 +10,18 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
 #--------------------------------------------------------------------------
 
-add_library(SSD1306 STATIC lib/FileDescriptor.cxx
-						   lib/OledHardware.cxx
-						   lib/OledPixel.cxx
-						   lib/OledFont8x8.cxx
-						   lib/OledFont8x12.cxx
-						   lib/OledFont8x16.cxx
-						   lib/OledGraphics.cxx
-						   lib/OledI2C.cxx)
+add_library(SSD1306 STATIC	lib/FileDescriptor.cxx
+							lib/OledHardware.cxx
+							lib/OledPixel.cxx
+							lib/OledFont8x8.cxx
+							lib/OledFont8x12.cxx
+							lib/OledFont8x16.cxx
+							lib/OledGraphics.cxx
+							lib/OledI2C.cxx)
+
+add_library(HTS221 STATIC	lib/FileDescriptor.cxx
+							lib/HTS221.cxx
+							lib/HTS221_Driver.c)
 
 include_directories(${PROJECT_SOURCE_DIR}/lib)
 
